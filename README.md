@@ -422,6 +422,17 @@ business-auditor/
 
 ---
 
+## Team
+
+| Name | GitHub |
+|------|--------|
+| Arman Hossain | [@arman-bd](https://github.com/arman-bd) |
+| Shahinur Shamshad | [@reya-shamshad](https://github.com/reya-shamshad) |
+| Aziz Ahmed | [@azizahmed45](https://github.com/azizahmed45) |
+| Claude Code | :robot: |
+
+---
+
 ## License
 
 This project is licensed under the [MIT License](LICENSE).

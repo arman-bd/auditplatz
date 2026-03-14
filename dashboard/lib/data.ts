@@ -4,9 +4,7 @@ import postgres from "postgres";
 
 const DATA_DIR = join(process.cwd(), "..", "data");
 
-const connectionString =
-  process.env.DATABASE_URL ||
-  "postgresql://mh_admin:***REDACTED_PASSWORD***@localhost:5433/business_auditor";
+const connectionString = process.env.DATABASE_URL!;
 
 const sql = postgres(connectionString, { max: 5, idle_timeout: 20 });
 

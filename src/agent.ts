@@ -12,7 +12,7 @@ import { sql } from "drizzle-orm";
 const featherless = createOpenAICompatible({
   name: "featherless",
   baseURL: "https://api.featherless.ai/v1",
-  apiKey: process.env.FEATHERLESS_API_KEY || "***REDACTED_API_KEY***",
+  apiKey: process.env.FEATHERLESS_API_KEY!,
 });
 
 const MODEL_ID = process.env.AUDIT_MODEL || "moonshotai/Kimi-K2.5";

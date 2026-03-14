@@ -4,9 +4,9 @@ services:
     container_name: business-auditor-db
     restart: unless-stopped
     environment:
-      POSTGRES_DB: business_auditor
-      POSTGRES_USER: mh_admin
-      POSTGRES_PASSWORD: ***REDACTED_PASSWORD***
+      POSTGRES_DB: ${PGDATABASE}
+      POSTGRES_USER: ${PGUSER}
+      POSTGRES_PASSWORD: ${PGPASSWORD}
     ports:
       - "5433:5432"
     volumes:
@@ -15,7 +15,7 @@ services:
       - ./src/seed.sql:/docker-entrypoint-initdb.d/02-seed.sql
       - ./generated-data/copy-staging:/staging:ro
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U mh_admin -d business_auditor"]
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
       interval: 5s
       timeout: 5s
       retries: 5
@@ -25,8 +25,8 @@ services:
     container_name: business-auditor-pgadmin
     restart: unless-stopped
     environment:
-      PGADMIN_DEFAULT_EMAIL: ***REDACTED_EMAIL***
-      PGADMIN_DEFAULT_PASSWORD: ***REDACTED_PASSWORD***
+      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL}
+      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD}
       PGADMIN_CONFIG_SERVER_MODE: "False"
       PGADMIN_CONFIG_MASTER_PASSWORD_REQUIRED: "False"
     ports:

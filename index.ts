@@ -4,8 +4,7 @@ import { generateText } from "ai";
 const featherless = createOpenAICompatible({
   name: "featherless",
   baseURL: "https://api.featherless.ai/v1",
-  apiKey:
-    "***REDACTED_API_KEY***",
+  apiKey: process.env.FEATHERLESS_API_KEY!,
 });
 
 const { text } = await generateText({

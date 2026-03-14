@@ -15,7 +15,7 @@ const DATA_DIR = join(process.cwd(), "generated-data");
 const COPY_DIR = join(DATA_DIR, "copy-staging");
 const CONTAINER = "business-auditor-db";
 const DB = "business_auditor";
-const USER = "mh_admin";
+const USER = process.env.PGUSER || "mh_admin";
 
 function readJSON<T>(filename: string): T {
   return JSON.parse(readFileSync(join(DATA_DIR, filename), "utf-8"));

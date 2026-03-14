@@ -10,7 +10,7 @@
 
 A forensic auditing platform that generates synthetic business data with intentional anomalies, runs rule-based audit checks across contracts, payroll, and financials, and uses AI to produce comprehensive forensic audit reports.
 
-> **Hackathon Project** — Built in **2 hours 30 minutes** at the [AI Mini Hackathon Berlin](https://www.meetup.com/) on **March 14, 2026** at Schicklerstra&szlig;e 5, Berlin.
+> **Hackathon Project** — Built in **2 hours 30 minutes** at the [AI Mini Hackathon Berlin](https://luma.com/g4gbi1w0) on **March 14, 2026** at Schicklerstra&szlig;e 5, Berlin.
 
 The demo runs against **M&H Wearables GmbH** — a fully fictional German wearable tech retailer with **18 retail stores** across Germany, **~420 employees**, and **6 years of business data** (2020–2025). The synthetic dataset contains **~2.8 million records** including **698K sales transactions**, **147K time entries**, **92K cash reconciliations**, **22K payroll records**, and more — all with a **1.5% intentional error rate** for the auditor to detect.
 

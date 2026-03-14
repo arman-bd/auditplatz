@@ -14,6 +14,8 @@ A forensic auditing platform that generates synthetic business data with intenti
 
 The demo runs against **M&H Wearables GmbH** — a fully fictional German wearable tech retailer with **18 retail stores** across Germany, **~420 employees**, and **6 years of business data** (2020–2025). The synthetic dataset contains **~2.8 million records** including **698K sales transactions**, **147K time entries**, **92K cash reconciliations**, **22K payroll records**, and more — all with a **1.5% intentional error rate** for the auditor to detect.
 
+[:page_facing_up: Presentation (PDF)](AuditPlatz-Demo.pdf)
+
 [Features](#-features) · [Screenshots](#-screenshots) · [Getting Started](#-getting-started) · [Architecture](#-architecture) · [AI Models](#-ai-models)
 
 </div>

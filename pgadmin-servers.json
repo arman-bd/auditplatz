@@ -1,0 +1,15 @@
+{
+  "Servers": {
+    "1": {
+      "Name": "M&H Wearables - Business Auditor",
+      "Group": "Servers",
+      "Host": "postgres",
+      "Port": 5432,
+      "MaintenanceDB": "business_auditor",
+      "Username": "mh_admin",
+      "Password": "***REDACTED_PASSWORD***",
+      "SSLMode": "prefer",
+      "PassFile": "/pgadmin4/pgpass"
+    }
+  }
+}

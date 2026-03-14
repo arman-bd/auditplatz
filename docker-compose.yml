@@ -1,0 +1,43 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: business-auditor-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: business_auditor
+      POSTGRES_USER: mh_admin
+      POSTGRES_PASSWORD: ***REDACTED_PASSWORD***
+    ports:
+      - "5433:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./src/schema.sql:/docker-entrypoint-initdb.d/01-schema.sql
+      - ./src/seed.sql:/docker-entrypoint-initdb.d/02-seed.sql
+      - ./generated-data/copy-staging:/staging:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U mh_admin -d business_auditor"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    container_name: business-auditor-pgadmin
+    restart: unless-stopped
+    environment:
+      PGADMIN_DEFAULT_EMAIL: ***REDACTED_EMAIL***
+      PGADMIN_DEFAULT_PASSWORD: ***REDACTED_PASSWORD***
+      PGADMIN_CONFIG_SERVER_MODE: "False"
+      PGADMIN_CONFIG_MASTER_PASSWORD_REQUIRED: "False"
+    ports:
+      - "5050:80"
+    volumes:
+      - pgadmin_data:/var/lib/pgadmin
+      - ./pgadmin-servers.json:/pgadmin4/servers.json
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+volumes:
+  pgdata:
+  pgadmin_data:

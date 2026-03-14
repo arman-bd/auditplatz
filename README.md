@@ -1,6 +1,6 @@
 <div align="center">
 
-# AuditPlatz
+# :robot: AuditPlatz
 
 ### AI-Powered Forensic Business Auditor
 
@@ -425,6 +425,10 @@ business-auditor/
 ---
 
 ## Team
+
+<img src="screenshots/team-photo.jpeg" alt="Team Photo" width="500">
+
+<br>
 
 | Name | GitHub |
 |------|--------|
